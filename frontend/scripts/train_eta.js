@@ -1,31 +1,31 @@
 async function getETA() {
-    const trainData = document.getElementById('trainData').value;
-    const loading = document.getElementById('loading');
-    const result = document.getElementById('result');
+    // Fetch values from input fields
+    const distance = document.getElementById('distance').value;
+    const speed = document.getElementById('speed').value;
 
-    loading.style.display = 'block'; // Show loading spinner
-    result.innerText = ''; // Clear previous results
+    // Check if values are valid
+    if (!distance || !speed) {
+        document.getElementById('result').innerText = 'Please enter valid distance and speed.';
+        return;
+    }
 
     try {
-        const response = await fetch('https://train-eta-backend.onrender.com/get_eta', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ train_data: `${distance},${speed}` }),
-});
-
+        const response = await fetch('https://your-app-name.onrender.com/get_eta', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ train_data: `${distance},${speed}` }),
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
-        result.innerText = `ETA: ${data.eta}`;
+        document.getElementById('result').innerText = `ETA: ${data.eta}`;
     } catch (error) {
         console.error('Error fetching ETA:', error);
-        result.innerText = 'Error calculating ETA.';
-    } finally {
-        loading.style.display = 'none'; // Hide loading spinner
+        document.getElementById('result').innerText = 'Error calculating ETA.';
     }
 }
