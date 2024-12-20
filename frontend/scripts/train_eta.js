@@ -7,13 +7,14 @@ async function getETA() {
     result.innerText = ''; // Clear previous results
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/get_eta', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ train_data: trainData }),
-        });
+        const response = await fetch('https://train-eta-backend.onrender.com/get_eta', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ train_data: `${distance},${speed}` }),
+});
+
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
