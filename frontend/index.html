@@ -3,12 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train ETA Project</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Train ETA - Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to the Train ETA Project</h1>
-    <p>Calculate the Estimated Time of Arrival for trains based on distance and speed.</p>
-    <a href="frontend/train_eta.html">Go to Train ETA Calculator</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Train ETA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="train_eta.html">ETA Tool</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">About the Project</h5>
+                        <p class="card-text">This project estimates goods train arrival times using real-time data and AI.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Get Started</h5>
+                        <p class="card-text">Click below to use the Train ETA Tool.</p>
+                        <a href="train_eta.html" class="btn btn-primary">Try the Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Train ETA. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="bg-light text-center text-lg-start mt-4">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);">
+        &copy; 2024 Train ETA. All rights reserved.
+    </div>
+</footer>
+
 </html>
