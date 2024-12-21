@@ -7,7 +7,7 @@ async function getETA() {
     result.innerText = ''; // Clear previous results
 
     try {
-    const response = await fetch('https://your-app-name.onrender.com/get_eta', {
+    const response = await fetch('https://train-eta-backend.onrender.com/get_eta', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
