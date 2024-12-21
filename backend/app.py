@@ -2,12 +2,14 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS
 from your_ai_model import get_train_eta
 
+from flask import redirect
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def home():
-    return "Welcome to the Train ETA Backend! Use the '/get_eta' endpoint to get train ETA."
+    return redirect("https://dgtel.github.io/train-eta-project/frontend/train_eta.html")
 
 @app.route('/get_eta', methods=['POST'])
 def calculate_eta():
